@@ -1,0 +1,31 @@
+<ion-view>
+  <ion-nav-title>{{service.name}}</ion-nav-title>
+  <ion-content>
+    <form novalidate name="form" ng-submit="sendServiceRequest()">
+      <div class="list">
+        <label ng-repeat="option in options" class="{{(option.dataType == 'SelectOne') ? 'item item-input item-select' : (option.dataType == 'Check') ? 'item item-toggle' : 'item item-input'}}">
+          <span class="input-label">{{option.name}}</span>
+          <input ng-if="option.dataType == 'Text' || option.dataType == 'Number'" type="text" ng-model="serviceRequestForm['option' + option.id]" ng-required="{{option.required}}">
+          <textarea ng-if="option.dataType == 'Info'" type="text" ng-model="serviceRequestForm['option' + option.id]" ng-required="{{option.required}}"></textarea>
+          <select ng-if="option.dataType == 'SelectOne'" ng-model="serviceRequestForm['option' + option.id]" ng-options="item for item in option.values"  ng-required="{{option.required}}"></select>
+          <span ng-if="option.dataType == 'Check'" class="toggle">
+            <input type="checkbox" ng-model="serviceRequestForm['option' + option.id]" ng-required="{{option.required}}">
+            <span  class="track">
+              <span class="handle"></span>
+            </span>
+          </span>
+          <input ng-if="option.dataType == 'Date'" type="date" ng-model="serviceRequestForm['option' + option.id]" ng-required="{{option.required}}">
+          <input ng-if="option.dataType == 'DateTime'" type="datetime-local" ng-model="serviceRequestForm['option' + option.id]" ng-required="{{option.required}}">
+          <input ng-if="option.dataType == 'Time'" type="time" ng-model="serviceRequestForm['option' + option.id]" ng-required="{{option.required}}">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Special Instructions</span>
+          <textarea ng-model="serviceRequestForm.info"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-disabled="form.$invalid">Submit</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

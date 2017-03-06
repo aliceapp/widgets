@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link rel="icon" type="image/png" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/magicsuggest/css/magicsuggest-min.css">
+    <link rel="stylesheet" href="css/showcase.css">
+  </head>
+  <body>
+    <div id='header'>
+      <div class="swagger-ui-wrap">
+      	<a id="logo" href="https://aliceapp.com"><img class="logo__img" alt="alice" width="66" src="img/logo.png" /></a>
+        <div class="menu"><a href="/">Guest API</a></div>
+        <div class="menu"><a href="/staff.html">Staff API</a></div>
+        <div class="menu selected"><a href="/app/showcase.html">Guest Widgets</a></div>
+        <div class="menu"><a href="/events.html">Events</a></div>
+        <form id='api_selector'>
+            <div id='auth_container'></div>
+        </form>
+      </div>
+    </div>
+    <div class="container alice-container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default config-panel">
+            <div class="panel-heading"><h3 class="panel-title">Service Request Example</h3></div>
+            <div class="panel-body">
+              <div class="widget-phone">
+                <iframe id="serviceExample" class="widget" src="/app/?widget#/app/facilities/24/services/100" seamless="seamless" frameBorder="0"></iframe>
+              </div>
+              <div class="widget-text">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="panel panel-default config-panel">
+                      <div class="panel-heading"><h3 class="panel-title">Seed Reservation Details</h3></div>
+                      <div class="panel-body">
+                        <form id="seedServiceForm" class="widget-form">
+                          <div class="row">
+                            <div class="col-xs-2 col-md-1 control-label">
+                              <div class="form-group">
+                                <label for="apikey">Room</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="room" value="">
+                              </div>
+                            </div>
+                            <div class="col-xs-2 control-label">
+                              <div class="form-group">
+                                <label for="hotelId">Last</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="last" value="">
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3">
+                              <div class="form-group">
+                                <button id="seedWidget" class="btn btn-success pull-right">Seed Widget</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <div class="panel panel-default config-panel">
+                      <div class="panel-heading"><h3 class="panel-title">Build Your Own</h3></div>
+                      <div class="panel-body">
+                        <form id="serviceWidgetForm" class="form-horizontal widget-form">
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="apikey">Api Key</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="password" class="form-control" name="apikey">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="hotelId">Hotel</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="hotelId">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="facilityId">Facility</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="facilityId" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="serviceId">Service</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="serviceId">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-12">
+                              <button class="btn btn-success pull-right" disabled="disabled">Get code</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="panel-footer">
+                        <textarea id="serviceCodeContainer" class="code-container"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default config-panel">
+            <div class="panel-heading"><h3 class="panel-title">Menu Order Example</h3></div>
+            <div class="panel-body">
+              <div class="widget-phone">
+                <iframe id="menuExample" class="widget" src="/app/?widget&showCart#/app/facilities/23/menus/45" seamless="seamless" frameBorder="0"></iframe>
+              </div>
+              <div class="widget-text">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="panel panel-default config-panel">
+                      <div class="panel-heading"><h3 class="panel-title">Seed Reservation Details</h3></div>
+                      <div class="panel-body">
+                        <form id="seedMenuForm" class="widget-form">
+                          <div class="row">
+                            <div class="col-xs-2 col-md-1 control-label">
+                              <div class="form-group">
+                                <label for="apikey">Room</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="room" value="">
+                              </div>
+                            </div>
+                            <div class="col-xs-2 control-label">
+                              <div class="form-group">
+                                <label for="hotelId">Last</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="last" value="">
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3">
+                              <div class="form-group">
+                                <button class="btn btn-success pull-right">Seed Widget</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <div class="panel panel-default config-panel">
+                      <div class="panel-heading"><h3 class="panel-title">Build Your Own</h3></div>
+                      <div class="panel-body">
+                        <form id="menuWidgetForm" class="form-horizontal widget-form">
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="apikey">Api Key</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="password" class="form-control" name="apikey">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="hotelId">Hotel</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="hotelId">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="facilityId">Facility</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="facilityId" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="menuId">Menu</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="menuId">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-12">
+                              <button class="btn btn-success pull-right" disabled="disabled">Get code</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="panel-footer">
+                        <textarea id="menuCodeContainer" class="code-container"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="panel panel-default config-panel">
+            <div class="panel-heading"><h3 class="panel-title">Chat Example</h3></div>
+            <div class="panel-body">
+              <div class="widget-phone">
+                <iframe id="chatExample" class="widget" src="/app/chat.html?last=Guest User&room=23" seamless="seamless" frameBorder="0"></iframe>
+              </div>
+              <div class="widget-text">
+                <div class="row">
+                  <div class="col-xs-12">
+                    <div class="panel panel-default config-panel">
+                      <div class="panel-heading"><h3 class="panel-title">Seed Reservation Details</h3></div>
+                      <div class="panel-body">
+                        <form id="seedForm" class="widget-form">
+                          <div class="row">
+                            <div class="col-xs-2 col-md-1 control-label">
+                              <div class="form-group">
+                                <label for="apikey">Room</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="room" value="23">
+                              </div>
+                            </div>
+                            <div class="col-xs-2 control-label">
+                              <div class="form-group">
+                                <label for="hotelId">Last</label>
+                              </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3">
+                              <div class="form-group">
+                                <input type="text" class="form-control" name="last" value="Guest User">
+                              </div>
+                            </div>
+                            <div class="col-sm-12 col-md-3">
+                              <div class="form-group">
+                                <button id="seedWidget" class="btn btn-success pull-right">Seed Widget</button>
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12">
+                    <div class="panel panel-default config-panel">
+                      <div class="panel-heading"><h3 class="panel-title">Build Your Own</h3></div>
+                      <div class="panel-body">
+                        <form id="chatWidgetForm" class="form-horizontal widget-form">
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="apikey">Api Key</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="password" class="form-control" name="apikey">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="hotelId">Hotel</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="hotelId">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="facilityId">Facility</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="facilityId" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-4 control-label">
+                              <label for="serviceId">Service</label>
+                            </div>
+                            <div class="col-xs-8">
+                              <input type="text" class="form-control" name="serviceId">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-xs-12">
+                              <button class="btn btn-success pull-right" disabled="disabled">Get code</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="panel-footer">
+                        <textarea id="chatCodeContainer" class="code-container"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alice-footer">
+      <span class="part">Created by FivePals Inc</span>
+      <span class="part"><a href="http://www.aliceapp.com/">Learn About ALICE</a></span>
+      <span class="part"><a href="mailto:sales@aliceapp.com?subject=API Enquiry">Contact Sales</a></span>
+      <span class="part"><a href="mailto:developer@aliceapp.com?subject=Open API Question">Contact Engineering</a></span>
+    </div>
+    
+    <script src="lib/jquery/jquery-1.12.3.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/magicsuggest/js/magicsuggest-min.js"></script>
+    <script src="js/showcase/ShowcaseForm.js"></script>
+    <script src="js/showcase/SeedForm.js"></script>
+    <script src="js/showcase/showcase.js"></script>
+  </body>
+</html>

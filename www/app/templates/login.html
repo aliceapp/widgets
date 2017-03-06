@@ -1,0 +1,26 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form novalidate name="loginForm" ng-submit="doLogin()" novalidate>
+      <div class="list">
+        <label class="item item-input">
+          <div class="input-label">Last Name</div>
+          <input type="text" name="name" ng-model="loginData.name" ng-required="true" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Room Number</span>
+          <input type="text" name="room" ng-model="loginData.room" ng-required="true">
+        </label>
+        <ion-checkbox name="acceptTerms" ng-model="loginData.accepted" ng-required="true">I accept the Terms of Service and Privacy Policy</ion-checkbox>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-disabled="loginForm.$invalid">Log in</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

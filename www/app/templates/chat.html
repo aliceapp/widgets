@@ -1,0 +1,33 @@
+<ion-view>
+  <ion-nav-title>{{service.name}}</ion-nav-title>
+  <ion-content>
+  
+  
+  
+    <div class="messages-container">
+      <div ng-repeat-start="message in chatService.chat" class="message-wrapper" ng-class="{'right': !message.incoming}">
+      
+      <div class="row">
+        <div class="column">
+               {{message.text}}
+        </div>
+      </div>
+     
+ 
+      </div>
+      <div ng-repeat-end style="clear:both;"></div>
+    </div>
+  </ion-content>
+    <form novalidate name="form" ng-submit="sendMessage()">
+  <div class="bar bar-footer chat-footer">
+      <div class="row">
+        <div class="col col-75">
+        <input id="text" ng-model="messageForm.text" ng-required="true" class="input-msg">
+        </div>
+        <div class="col col-25">
+          <button class="button button-small input-msg-button" type="submit" ng-disabled="form.$invalid">Send</button>
+        </div>
+      </div>
+  </div>
+     </form>
+</ion-view>

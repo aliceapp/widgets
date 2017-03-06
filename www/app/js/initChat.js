@@ -1,0 +1,12 @@
+goog.require('controller.ChatAppController');
+goog.require('controller.StartChatController');
+goog.require('controller.ChatController');
+goog.require('service.HotelService');
+goog.require('service.SecurityService');
+goog.require('service.LoginService');
+goog.require('service.TicketService');
+goog.require('service.MessagingService');
+goog.require('service.EventsService');
+goog.require('service.SubscriptionService');
+goog.require('service.ChatService');
+goog.require('domain.AppConfig');

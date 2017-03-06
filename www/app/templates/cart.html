@@ -1,0 +1,28 @@
+<ion-view view-title="Cart">
+  <ion-content>
+    <ion-list ng-if="cartService.get().length > 0">
+      <div ng-repeat="(menuIndex, menu) in cartService.get()">
+        <ion-item ng-repeat="(itemIndex, item) in menu.items">
+          {{item.name}}<span ng-if="item.options">(<span ng-repeat="o in item.options">{{o.name}}<span ng-show="!$last">, </span></span>)</span> x {{item.quantity}}
+          <span class="right"><button ng-click="cartService.remove(menuIndex, itemIndex)">X</button></span>
+        </ion-item>
+      </div>
+      <ion-item ng-if="cartService.getTotalPrice() > 0">
+        Total<span class="right">{{cartService.getTotalPrice()}}$</span>
+      </ion-item>
+    </ion-list>
+    <form ng-submit="placeOrder()">
+      <label class="item item-input">
+        <span class="input-label">Delivery</span>
+        <input type="datetime-local" ng-model="cartForm.deliveryTime"></input>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Special Instructions</span>
+        <textarea ng-model="cartForm.info"></textarea>
+      </label>
+      <label class="item">
+        <button class="button button-block button-positive" ng-disabled="cartService._cart.length == 0" type="submit">Place Order</button>
+      </label>
+    </form>
+  </ion-content>
+</ion-view>

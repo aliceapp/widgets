@@ -1,0 +1,10 @@
+<ion-view>
+  <ion-nav-title>{{menu.name}}</ion-nav-title>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="item in items" href="#/app/facilities/{{facility.id}}/menus/{{menu.id}}/items/{{item.id}}">
+        {{item.name}}<span ng-if="item.price" class="right" >{{item.price}}{{item.currency}}</span>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

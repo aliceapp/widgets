@@ -1,0 +1,15 @@
+<ion-view>
+  <ion-nav-title>{{service.name}}</ion-nav-title>
+  <ion-content>
+    <form novalidate name="form" ng-submit="sendMessage()">
+      <div class="list">
+        <label class="item item-input">
+          <textarea id="startChatMessage" ng-model="messageForm.text" ng-required="true"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-disabled="form.$invalid">Start Chat</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

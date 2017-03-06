@@ -1,0 +1,42 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu-content drag-content="widget == null">
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <ion-nav-buttons side="right">
+        
+        <button ng-if="widget == null" class="button button-icon button-clear ion-navicon" menu-toggle="right">
+        </button>
+        <button ng-if="widget != null && showCart != null" class="button button-icon button-clear ion-ios-cart-outline" ng-click="goToCart()">
+          {{cartService.size() > 0?'(' + cartService.size() + ')':''}}
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="right">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Alice Demo Hotel</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item ng-if="currentUser != null">
+          Welcome, {{currentUser.fistname}} {{currentUser.lastname}}
+        </ion-item>
+        <ion-item ng-if="currentUser == null" menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item ng-if="currentUser != null" menu-close ng-click="logout()">
+          Logout
+        </ion-item>
+        <ion-item menu-close href="#/app/facilities">
+          Facilities
+        </ion-item>
+        <ion-item id="cart" menu-close href="#/app/cart">
+          Cart <span ng-if="cartService.size() > 0">({{cartService.size()}})</span>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

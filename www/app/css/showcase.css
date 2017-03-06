@@ -1,0 +1,155 @@
+.widget {
+ height: 576px;
+ width: 328px; 
+}
+
+.widget-phone {
+ padding-top: 104px; 
+ padding-left: 18px;
+ background-image: url("/app/img/phone.png");
+ background-size: 365px 792px;
+ width: 365px; 
+ height: 792px;
+ float: left;
+}
+
+.widget-text {
+ padding-top: 67px; 
+ padding-left: 381px;
+}
+
+.widget-form {
+  padding-top: 5px;
+}
+
+.widget-form .control-label {
+  padding-top: 7px;
+  text-align: right;
+}
+
+.code-container {
+  width: 100%;
+  height: 100px;
+}
+
+#header {
+  background-color: #fff;
+  padding: 28px 14px 22px 30px;
+  height: 120px;
+  min-width: 775px;
+  box-shadow: 2px 0 2px #ccc;
+  margin-bottom: 15px;
+}
+
+.swagger-ui-wrap {
+    line-height: 1;
+    font-family: arial;
+    min-width: 760px;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+  	font-weight: bold;
+  	font-size: 16px;
+  	padding-left: 60px;
+  	padding-top: 48px;
+  	float: left;
+  	position: relative;
+}
+
+.menu a {
+	color: #999999;
+	text-decoration: none;
+}
+
+.menu a:hover {
+	color: #019BB3;
+	text-decoration: none;
+}
+	
+.selected a {
+	color: #019BB3;
+	text-decoration: none;
+}
+
+.logo__img {
+     display: block;
+    float: left;
+}
+
+.alice-footer {
+	bottom: 0;
+	background-color: #e8e8e8;
+	position: fixed;
+	width: 100%;
+	color: #4c4c4c;
+	font-family: arial;
+	min-width: 800px;
+}
+
+.alice-footer .part {
+	width: 25%;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: center;
+	display: block;
+  	position: relative;
+  	float: left;
+  	font-size: 0.9em;
+}
+
+.alice-footer .part a {
+	color: #4c4c4c;
+	text-decoration: none;
+}
+
+.alice-footer .part a:hover {
+	color: #019BB3;
+	text-decoration: none;
+}
+
+.alice-container {
+  min-width: 800px;
+  margin-bottom: 40px;
+}
+
+.config-panel {
+  border: 0px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.config-panel .panel-heading {
+  background-color: #fff;
+}
+
+.config-panel .panel-footer {
+  background-color: #fff;
+}
+
+.config-panel .panel-heading .panel-title {
+  color: #019BB3;
+}
+
+.btn-success {
+  background-color: #019BB3;
+  border-color: #019BB3;
+}
+
+.btn-success:hover {
+  background-color: #019BB3 !important;
+  border-color: #019BB3 !important;
+}
+
+.btn-success:focus {
+  background-color: #019BB3 !important;
+  border-color: #019BB3 !important;
+}
+
+.btn-success:active {
+  background-color: #019BB3 !important;
+  border-color: #019BB3 !important;
+}

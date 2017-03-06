@@ -1,0 +1,29 @@
+<ion-view>
+  <ion-nav-title>{{item.name}}</ion-nav-title>
+  <ion-content>
+    <form novalidate name="form" ng-submit="addToCart()">
+      <div class="list">
+        <div>
+          <label class="item item-input">
+            <span class="input-label">Quantity <span ng-if="item.price" > x {{item.price}}{{item.currency}}</span></span>
+            <input id="item{{item.id}}" type="text" ng-model="menuOrderForm.quantity" ng-required="true">
+          </label>
+        </div>
+        <label ng-repeat="option in options" class="{{(option.dataType == 'SelectOneSub' ) ? 'item item-input item-select' : 'item item-input'}}">
+          <span class="input-label">{{option.name}}</span>
+          <select ng-if="option.dataType == 'SelectOneSub'" ng-model="menuOrderForm['option' + option.id]" ng-options="i as i.name + ' + ' + i.price + item.currency for i in option.options"  ng-required="{{option.required}}"></select>
+        </label>
+        <label ng-if="item.price" class="item">
+          <span class="input-label">Total<span class="right">{{getTotal()}}{{item.currency}}</span></span>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Special Instructions</span>
+          <textarea ng-model="menuOrderForm.comment"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-disabled="form.$invalid">Add to Cart</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,13 @@
+<ion-view>
+  <ion-nav-title>{{facility.name}}</ion-nav-title>
+  <ion-content>
+    <ion-list>
+      <ion-item class="text-center" ng-repeat="menu in menus" href="#/app/facilities/{{facility.id}}/menus/{{menu.id}}">
+        {{menu.name}}
+      </ion-item>
+      <ion-item class="text-center" ng-repeat="service in services" href="#/app/facilities/{{facility.id}}/services/{{service.id}}">
+        {{service.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
